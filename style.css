@@ -1022,4 +1022,26 @@ h1 span {
 
 }
 
+/* SELECTOR DE AÑOS EN CELULARES */
+.question select {
+    color-scheme: light;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #FAF9F7;
+    color: #171717;
+    border: 1px solid #E6E0DC;
+    border-radius: 5px;
+}
+
+.question select:focus {
+    border-color: #C51F35;
+    outline: none;
+    box-shadow: 0 0 0 3px #C51F3512;
+}
+
+.question select option {
+    background-color: #FFFFFF;
+    color: #171717;
+}
+
 
