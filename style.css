@@ -1,0 +1,1025 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --red: #C51F35;
+    --red-dark: #94182A;
+    --black: #171717;
+    --white: #FFFFFF;
+    --cream: #F7F5F1;
+    --gray: #77716F;
+    --border: #E6E0DC;
+    --soft-red: #F8E9E9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--black);
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+.screen {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.screen.active {
+    display: flex;
+    animation: screenAppear 0.55s ease;
+}
+
+@keyframes screenAppear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ELEMENTOS GENERALES */
+
+.eyebrow {
+    display: inline-block;
+    color: var(--red);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 27px;
+    border: 1px solid var(--red);
+    border-radius: 4px;
+    background: var(--red);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: var(--red-dark);
+    border-color: var(--red-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px #C51F3525;
+}
+
+button span {
+    margin-left: 12px;
+}
+
+.back-button {
+    background: transparent;
+    color: var(--black);
+    border-color: #BDB5B0;
+}
+
+.back-button:hover {
+    background: var(--black);
+    color: white;
+    border-color: var(--black);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* BIENVENIDA */
+
+.welcome {
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 25px;
+    background: var(--cream);
+}
+
+.welcome::before {
+    content: "BTS";
+    position: absolute;
+    right: -30px;
+    bottom: -100px;
+    color: #17171705;
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(180px, 35vw, 420px);
+    font-weight: 800;
+    letter-spacing: -20px;
+    pointer-events: none;
+}
+
+.welcome::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+    background: var(--red);
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 850px;
+    text-align: center;
+}
+
+.welcome .eyebrow {
+    padding: 10px 17px;
+    border: 1px solid #D8CFC9;
+    background: #FFFFFF80;
+}
+
+h1 {
+    margin: 35px 0 25px;
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(48px, 9vw, 100px);
+    font-weight: 800;
+    line-height: 0.98;
+    letter-spacing: -5px;
+}
+
+h1 span {
+    display: block;
+    color: var(--red);
+}
+
+.description {
+    max-width: 550px;
+    margin: 0 auto;
+    color: #625D59;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.invitation {
+    margin-top: 25px;
+    color: var(--black);
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.welcome button {
+    min-width: 230px;
+    padding: 17px 25px;
+}
+
+.footer-text {
+    display: block;
+    margin-top: 65px;
+    color: #8D8580;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+/* PERFIL ARMY */
+
+.profile {
+    justify-content: center;
+    align-items: center;
+    padding: 75px 20px;
+    background: var(--white);
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+}
+
+.profile h2,
+.history h2,
+.letters h2,
+.awards h2,
+.memory h2 {
+    margin: 22px 0 15px;
+    color: var(--black);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 55px);
+    font-weight: 600;
+}
+
+.profile h2 span,
+.history h2 span,
+.letters h2 span,
+.awards h2 span,
+.memory h2 span {
+    color: var(--red);
+}
+
+.profile-description,
+.history-description,
+.letters-description,
+.awards-description,
+.memory-description {
+    max-width: 500px;
+    margin: 0 auto 38px;
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* FORMULARIOS */
+
+#armyForm,
+#memoryForm {
+    text-align: left;
+}
+
+.question {
+    margin-bottom: 25px;
+}
+
+.question label {
+    display: block;
+    margin-bottom: 11px;
+    color: #292525;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.question select,
+.question input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    outline: none;
+    background: #FAF9F7;
+    color: var(--black);
+    font-size: 13px;
+    transition: 0.25s ease;
+}
+
+.question select:focus,
+.question input:focus {
+    border-color: var(--red);
+    background: white;
+    box-shadow: 0 0 0 3px #C51F3512;
+}
+
+.question select option {
+    background: white;
+    color: var(--black);
+}
+
+.question input::placeholder {
+    color: #A49C97;
+}
+
+.profile-button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.return-button {
+    display: block;
+    margin: 25px auto 0;
+    padding: 10px 15px;
+    border: none;
+    background: transparent;
+    color: var(--gray);
+    font-size: 12px;
+}
+
+.return-button:hover {
+    background: transparent;
+    color: var(--red);
+    box-shadow: none;
+}
+
+/* RESULTADO DEL PERFIL */
+
+.result-card {
+    margin-top: 35px;
+    padding: 35px;
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--red);
+    background: var(--cream);
+    text-align: center;
+    animation: appear 0.5s ease;
+}
+
+.result-label {
+    color: var(--red);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.result-card h3 {
+    margin: 20px 0;
+    color: var(--black);
+    font-size: 28px;
+}
+
+.result-card p {
+    color: #625D59;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.favorite-song {
+    margin-top: 25px;
+    padding: 20px;
+    background: var(--white);
+    border-left: 3px solid var(--red);
+}
+
+.favorite-song span {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--red);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.favorite-song strong {
+    color: var(--black);
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+}
+
+/* NUESTRA HISTORIA */
+
+.history {
+    justify-content: center;
+    align-items: center;
+    padding: 75px 20px;
+    background: var(--cream);
+}
+
+.history-container {
+    width: 100%;
+    max-width: 950px;
+    text-align: center;
+}
+
+.history-description {
+    margin-bottom: 45px;
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: left;
+}
+
+.timeline-card {
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: white;
+    transition: 0.3s ease;
+}
+
+.timeline-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--red);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: 0.3s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+    border-color: #D5B3B5;
+    box-shadow: 0 12px 30px #1717170D;
+}
+
+.timeline-card:hover::before {
+    transform: scaleY(1);
+}
+
+.timeline-year {
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.timeline-card h3 {
+    margin: 15px 0 12px;
+    color: var(--black);
+    font-size: 23px;
+    line-height: 1.3;
+}
+
+.timeline-card p {
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.timeline-era {
+    display: inline-block;
+    margin-top: 22px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    color: var(--red);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.history .back-button {
+    margin-top: 35px;
+}
+
+/* CARTAS PARA ARMY */
+
+.letters {
+    justify-content: center;
+    align-items: center;
+    padding: 75px 20px;
+    background: var(--white);
+}
+
+.letters-container {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+}
+
+.letters-description {
+    margin-bottom: 40px;
+}
+
+/* SOBRE */
+
+.letter-envelope {
+    position: relative;
+    padding: 55px 25px;
+    border: 1px solid #E5D4D2;
+    border-radius: 5px;
+    background: var(--cream);
+    box-shadow: 0 15px 35px #1717170A;
+}
+
+.letter-decoration {
+    display: block;
+    margin-bottom: 22px;
+    color: var(--red);
+    font-size: 60px;
+}
+
+.letter-envelope p {
+    color: var(--black);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.letter-envelope button {
+    margin-top: 25px;
+}
+
+/* MENSAJE */
+
+.letter-message {
+    margin-top: 25px;
+    padding: 40px 30px;
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--red);
+    background: var(--cream);
+    animation: appear 0.5s ease;
+}
+
+.letter-number {
+    color: var(--red);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.letter-message p {
+    margin: 25px 0;
+    color: #302B28;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    line-height: 1.9;
+}
+
+.letter-signature {
+    color: var(--red);
+    font-size: 12px;
+    font-style: italic;
+}
+
+#anotherLetterButton {
+    margin-top: 25px;
+}
+
+.letters .back-button {
+    display: block;
+    margin: 25px auto 0;
+}
+
+/* PREMIOS ARMY */
+
+.awards {
+    justify-content: center;
+    align-items: center;
+    padding: 75px 20px;
+    background: var(--black);
+}
+
+.awards .eyebrow {
+    color: #F06A78;
+}
+
+.awards h2 {
+    color: white;
+}
+
+.awards h2 span {
+    color: #F04A5E;
+}
+
+.awards-description {
+    color: #BEB9B6;
+}
+
+/* TARJETA DEL PREMIO */
+
+.award-card {
+    position: relative;
+    overflow: hidden;
+    padding: 45px 30px;
+    border: 1px solid #494343;
+    border-top: 4px solid var(--red);
+    border-radius: 5px;
+    background: #222020;
+    box-shadow: 0 20px 50px #00000030;
+    animation: appear 0.5s ease;
+}
+
+.award-card::after {
+    content: "ARMY";
+    position: absolute;
+    right: -10px;
+    bottom: -30px;
+    color: #FFFFFF08;
+    font-size: 100px;
+    font-weight: 800;
+    pointer-events: none;
+}
+
+.award-icon {
+    display: block;
+    margin-bottom: 25px;
+    font-size: 52px;
+}
+
+.award-label {
+    color: #F06A78;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.award-card h3 {
+    position: relative;
+    z-index: 1;
+    margin: 20px 0;
+    color: white;
+    font-size: 30px;
+}
+
+.award-card p {
+    position: relative;
+    z-index: 1;
+    color: #D0C9C6;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.award-seal {
+    display: block;
+    margin-top: 30px;
+    color: #F06A78;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+/* BOTONES DE PREMIOS */
+
+.awards-container > button {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 15px auto 0;
+}
+
+.awards-container > #getAwardButton,
+.awards-container > #anotherAwardButton {
+    background: var(--red);
+    color: white;
+    border: 1px solid var(--red);
+}
+
+.awards-container > #anotherAwardButton {
+    background: transparent;
+    color: #F06A78;
+}
+
+.awards-container > .back-button {
+    width: auto;
+    margin: 30px auto 0;
+    padding: 11px 18px;
+    background: transparent;
+    border: 1px solid #77716F;
+    color: white;
+    font-size: 11px;
+}
+
+.awards-container > .back-button:hover {
+    background: white;
+    color: var(--black);
+}
+
+.awards .back-button:hover {
+    background: white;
+    color: var(--black);
+    border-color: white;
+}
+
+/* MI RECUERDO */
+
+.memory {
+    justify-content: center;
+    align-items: center;
+    padding: 75px 20px;
+    background: var(--cream);
+}
+
+.memory-container {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+}
+
+.memory-description {
+    margin-bottom: 40px;
+}
+
+/* TARJETA PERSONALIZADA */
+
+.memory-result {
+    margin-top: 35px;
+    animation: appear 0.5s ease;
+}
+
+.memory-card {
+    position: relative;
+    overflow: hidden;
+    padding: 45px 30px;
+    border: 1px solid #D9C9C3;
+    border-top: 6px solid var(--red);
+    border-radius: 4px;
+    background: white;
+    box-shadow: 0 18px 45px #17171712;
+}
+
+.memory-card::before {
+    content: "✦";
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: #E8D8D5;
+    font-size: 45px;
+}
+
+.memory-card-label {
+    display: block;
+    color: var(--red);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.memory-card-symbol {
+    display: block;
+    margin: 35px 0;
+    color: var(--red);
+    font-size: 35px;
+}
+
+.memory-card-intro,
+.memory-card-year {
+    color: #77716F;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.memory-card h3 {
+    margin: 18px 0;
+    color: var(--black);
+    font-size: 34px;
+    overflow-wrap: anywhere;
+}
+
+.memory-card-line {
+    width: 60px;
+    height: 3px;
+    margin: 25px auto;
+    background: var(--red);
+}
+
+.memory-card-year {
+    margin-bottom: 12px;
+}
+
+.memory-card > strong {
+    color: var(--red);
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+}
+
+.memory-card-song {
+    margin-top: 30px;
+    padding: 22px;
+    border: 1px solid var(--border);
+    background: var(--cream);
+}
+
+.memory-card-song span {
+    color: var(--red);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.memory-card-song p {
+    margin-top: 12px;
+    color: var(--black);
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    overflow-wrap: anywhere;
+}
+
+.memory-card-footer {
+    display: block;
+    margin-top: 35px;
+    color: var(--red);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.memory-note {
+    margin-top: 20px;
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+#editMemoryButton {
+    display: block;
+    margin: 15px auto 0;
+}
+
+.memory .back-button {
+    display: block;
+    margin: 25px auto 0;
+}
+
+/* BOTONES DE NAVEGACIÓN CREADOS CON JAVASCRIPT */
+
+.history-container > .profile-button,
+.letters-container > .profile-button,
+.awards-container > .profile-button {
+    width: auto;
+    max-width: 100%;
+    margin-top: 30px;
+}
+
+/* ESPACIO PARA FUTURAS FOTOGRAFÍAS */
+
+.welcome-photo,
+.timeline-image,
+.section-image {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.timeline-image {
+    height: 190px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+
+.welcome-photo {
+    max-width: 520px;
+    max-height: 350px;
+    margin: 0 auto 30px;
+    border-radius: 4px;
+}
+
+/* IMPRESIÓN DE MI RECUERDO */
+
+@media print {
+
+    @page {
+        size: A4 portrait;
+        margin: 15mm;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+
+    #memoryCard,
+    #memoryCard * {
+        visibility: visible;
+    }
+
+    #memoryCard {
+        position: absolute;
+        top: 15mm;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90mm;
+        min-height: 130mm;
+        box-shadow: none;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+}
+
+/* TABLETS Y CELULARES */
+
+@media (max-width: 700px) {
+
+    .timeline {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-card {
+        padding: 25px;
+    }
+
+    h1 {
+        letter-spacing: -3px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .welcome {
+        padding: 55px 22px;
+    }
+
+    .welcome::before {
+    right: 0;
+    bottom: -35px;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(100px, 30vw, 180px);
+    letter-spacing: -8px;
+    white-space: nowrap;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .invitation {
+        font-size: 17px;
+    }
+
+    .footer-text {
+        margin-top: 50px;
+    }
+
+    .profile,
+    .history,
+    .letters,
+    .awards,
+    .memory {
+        padding: 55px 20px;
+    }
+
+    .profile-description,
+    .history-description,
+    .letters-description,
+    .awards-description,
+    .memory-description {
+        font-size: 13px;
+    }
+
+    .question label {
+        line-height: 1.6;
+    }
+
+    .result-card {
+        padding: 24px 20px;
+    }
+
+    .result-card h3 {
+        font-size: 24px;
+    }
+
+    .letter-message {
+        padding: 28px 20px;
+    }
+
+    .letter-message p {
+        font-size: 17px;
+    }
+
+    .award-card {
+        padding: 32px 20px;
+    }
+
+    .award-card h3 {
+        font-size: 25px;
+    }
+
+    .memory-card {
+        padding: 35px 20px;
+    }
+
+    .memory-card h3 {
+        font-size: 27px;
+    }
+
+    .memory-card > strong {
+        font-size: 34px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto;
+        animation-duration: 0.01ms;
+        transition-duration: 0.01ms;
+    }
+
+}
+
+

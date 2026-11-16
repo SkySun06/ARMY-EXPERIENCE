@@ -1,0 +1,465 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The ARMY Experience</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BIENVENIDA -->
+
+    <main class="screen welcome active" id="welcome">
+
+        <div class="welcome-content">
+
+            <span class="eyebrow">A LITTLE SPACE FOR ARMY</span>
+
+            <h1>
+                THE ARMY
+                <span>EXPERIENCE</span>
+            </h1>
+
+            <p class="description">
+                Hay canciones que se convierten en recuerdos,
+                momentos que permanecen y personas que,
+                sin conocerse, comparten una misma historia.
+            </p>
+
+            <p class="invitation">
+                Este pequeño espacio también es para ti.
+            </p>
+
+            <button id="enterButton">
+                Descubrir mi experiencia
+                <span>→</span>
+            </button>
+
+            <span class="footer-text">
+                MADE WITH LOVE FOR ARMY
+            </span>
+
+        </div>
+
+    </main>
+
+
+    <!-- PERFIL ARMY -->
+
+    <section class="screen profile" id="profile">
+
+        <div class="profile-container">
+
+            <span class="eyebrow">PART OF OUR STORY</span>
+
+            <h2>Mi historia como <span>ARMY</span></h2>
+
+            <p class="profile-description">
+                Cada persona tiene una historia diferente.
+                Nos gustaría conocer un poquito de la tuya.
+            </p>
+
+            <form id="armyForm">
+
+                <div class="question">
+
+                    <label for="year">
+                        01. ¿Desde cuándo conoces a BTS?
+                    </label>
+
+                    <select id="year" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="2013-2016">2013 - 2016</option>
+                        <option value="2017-2019">2017 - 2019</option>
+                        <option value="2020-2022">2020 - 2022</option>
+                        <option value="2023-actualidad">2023 - Actualmente</option>
+                    </select>
+
+                </div>
+
+
+                <div class="question">
+
+                    <label for="meaning">
+                        02. ¿Qué es lo que más valoras de BTS?
+                    </label>
+
+                    <select id="meaning" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="music">Su música y sus letras</option>
+                        <option value="memories">Los recuerdos que me acompañan</option>
+                        <option value="motivation">La motivación que encuentro en ellos</option>
+                        <option value="experience">Todo lo que he vivido como ARMY</option>
+                    </select>
+
+                </div>
+
+
+                <div class="question">
+
+                    <label for="song">
+                        03. ¿Qué canción tiene un significado especial para ti?
+                    </label>
+
+                    <input
+                        type="text"
+                        id="song"
+                        placeholder="Escribe el nombre de una canción..."
+                        maxlength="60"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit" class="profile-button">
+                    Descubrir mi resultado →
+                </button>
+
+            </form>
+
+
+            <!-- RESULTADO -->
+
+            <div class="result-card" id="resultCard" hidden>
+
+                <span class="result-label">TU HISTORIA TAMBIÉN CUENTA</span>
+
+                <h3 id="resultTitle"></h3>
+
+                <p id="resultMessage"></p>
+
+                <div class="favorite-song">
+                    <span>UNA CANCIÓN ESPECIAL PARA TI</span>
+                    <strong id="favoriteSong"></strong>
+                </div>
+
+                <button type="button" id="backButton" class="back-button">
+                    Volver a mi perfil
+                </button>
+
+            </div>
+
+            <button type="button" id="returnButton" class="return-button">
+                ← Volver al inicio
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- NUESTRA HISTORIA -->
+
+<section class="screen history" id="history">
+
+    <div class="history-container">
+
+        <span class="eyebrow">A JOURNEY TO REMEMBER</span>
+
+        <h2>Nuestra <span>historia</span></h2>
+
+        <p class="history-description">
+            Desde el comienzo hasta cada nueva etapa,
+            hay momentos que siempre formarán parte de nuestra historia.
+        </p>
+
+        <div class="timeline">
+
+            <article class="timeline-card">
+                <span class="timeline-year">2013</span>
+                <h3>El comienzo</h3>
+                <p>
+                    Siete chicos comenzaron un camino que terminaría
+                    conectando millones de historias.
+                </p>
+                <span class="timeline-era">2 COOL 4 SKOOL</span>
+            </article>
+
+            <article class="timeline-card">
+                <span class="timeline-year">2015</span>
+                <h3>The Most Beautiful Moment in Life</h3>
+                <p>
+                    Una etapa que exploró la juventud, los sueños,
+                    las dudas y los recuerdos.
+                </p>
+                <span class="timeline-era">HYYH</span>
+            </article>
+
+            <article class="timeline-card">
+                <span class="timeline-year">2017</span>
+                <h3>El mundo los escuchó</h3>
+                <p>
+                    Su música cruzó fronteras y muchas personas
+                    encontraron un lugar al que pertenecer.
+                </p>
+                <span class="timeline-era">LOVE YOURSELF</span>
+            </article>
+
+            <article class="timeline-card">
+                <span class="timeline-year">2020</span>
+                <h3>Un mensaje para el mundo</h3>
+                <p>
+                    Incluso en tiempos difíciles, su música
+                    nos recordó que siempre podía existir esperanza.
+                </p>
+                <span class="timeline-era">DYNAMITE · BE</span>
+            </article>
+
+            <article class="timeline-card">
+                <span class="timeline-year">2022</span>
+                <h3>Un nuevo capítulo</h3>
+                <p>
+                    Una pausa para mirar el camino recorrido
+                    y prepararse para nuevos comienzos.
+                </p>
+                <span class="timeline-era">PROOF</span>
+            </article>
+
+            <article class="timeline-card">
+                <span class="timeline-year">2025</span>
+                <h3>El reencuentro</h3>
+                <p>
+                    Una nueva etapa para volver a compartir
+                    música, escenarios y momentos.
+                </p>
+                <span class="timeline-era">A NEW CHAPTER</span>
+            </article>
+
+        </div>
+
+        <button type="button" id="historyBackButton" class="back-button">
+            ← Volver a mi historia
+        </button>
+
+    </div>
+
+</section>
+
+<!-- CARTAS PARA ARMY -->
+
+<section class="screen letters" id="letters">
+
+    <div class="letters-container">
+
+        <span class="eyebrow">A LITTLE MESSAGE FOR YOU</span>
+
+        <h2>Cartas para <span>ARMY</span></h2>
+
+        <p class="letters-description">
+            Hay palabras que llegan en el momento indicado.
+            Esta vez tenemos una pequeña sorpresa para ti.
+        </p>
+
+        <div class="letter-envelope">
+
+            <span class="letter-decoration">✉</span>
+
+            <p>UNA CARTA ESPERA POR TI</p>
+
+            <button type="button" id="openLetterButton">
+                Abrir mi carta →
+            </button>
+
+        </div>
+
+        <div class="letter-message" id="letterMessage" hidden>
+
+            <span class="letter-number">A MESSAGE JUST FOR YOU</span>
+
+            <p id="letterText"></p>
+
+            <span class="letter-signature">
+                With love, ARMY 💜
+            </span>
+
+        </div>
+
+        <button type="button" id="anotherLetterButton" hidden>
+            Quiero otra carta ✨
+        </button>
+
+        <button type="button" id="lettersBackButton" class="back-button">
+            ← Volver a nuestra historia
+        </button>
+
+    </div>
+
+</section>
+
+<!-- PREMIOS ARMY -->
+
+<section class="screen awards" id="awards">
+
+    <div class="awards-container">
+
+        <span class="eyebrow">THE ARMY AWARDS</span>
+
+        <h2>Premios <span>ARMY</span></h2>
+
+        <p class="awards-description">
+            Toda ARMY tiene un talento especial.
+            Ha llegado el momento de descubrir cuál es el tuyo.
+        </p>
+
+        <div class="award-card" id="awardCard">
+
+            <span class="award-icon">🏆</span>
+
+            <span class="award-label">TU RECONOCIMIENTO OFICIAL</span>
+
+            <h3 id="awardTitle">¿Qué premio te corresponde?</h3>
+
+            <p id="awardDescription">
+                Pulsa el botón para descubrir tu título honorífico
+                dentro del universo ARMY.
+            </p>
+
+            <span class="award-seal">ARMY AWARDS · 2026</span>
+
+        </div>
+
+        <button type="button" id="getAwardButton">
+            Descubrir mi premio →
+        </button>
+
+        <button type="button" id="anotherAwardButton" hidden>
+            Quiero otro premio ✨
+        </button>
+
+        <button type="button" id="awardsBackButton" class="back-button">
+            ← Volver a las cartas
+        </button>
+
+    </div>
+
+</section>
+
+<!-- MI RECUERDO -->
+
+<section class="screen memory" id="memory">
+
+    <div class="memory-container">
+
+        <span class="eyebrow">A MEMORY TO KEEP</span>
+
+        <h2>Mi <span>recuerdo</span></h2>
+
+        <p class="memory-description">
+            Hay historias que merecen quedarse.
+            Crea una pequeña tarjeta para recordar tu camino como ARMY.
+        </p>
+
+        <form id="memoryForm">
+
+            <div class="question">
+                <label for="memoryName">01. ¿Cómo te gustaría que aparezca tu nombre?</label>
+                <input
+                    type="text"
+                    id="memoryName"
+                    placeholder="Tu nombre o apodo..."
+                    maxlength="30"
+                >
+            </div>
+
+            <div class="question">
+                <label for="memoryYear">02. ¿En qué año comenzó tu historia?</label>
+                <select id="memoryYear" required>
+                    <option value="">Selecciona el año</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                    <option>2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label for="memorySong">03. Una canción que siempre será especial</label>
+                <input
+                    type="text"
+                    id="memorySong"
+                    placeholder="Escribe el nombre de la canción..."
+                    maxlength="60"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="profile-button">
+                Crear mi recuerdo →
+            </button>
+
+        </form>
+
+        <div class="memory-result" id="memoryResult" hidden>
+
+            <div class="memory-card" id="memoryCard">
+
+                <span class="memory-card-label">THE ARMY EXPERIENCE</span>
+
+                <span class="memory-card-symbol">✦</span>
+
+                <p class="memory-card-intro">ESTA HISTORIA PERTENECE A</p>
+
+                <h3 id="memoryResultName"></h3>
+
+                <div class="memory-card-line"></div>
+
+                <p class="memory-card-year">
+                    MI CAMINO COMO ARMY COMENZÓ EN
+                </p>
+
+                <strong id="memoryResultYear"></strong>
+
+                <div class="memory-card-song">
+                    <span>UNA CANCIÓN PARA RECORDAR</span>
+                    <p id="memoryResultSong"></p>
+                </div>
+
+                <span class="memory-card-footer">
+                    SEVEN FOREVER, ONE FAMILY 💜
+                </span>
+
+            </div>
+
+            <p class="memory-note">
+                Tu historia es única. Gracias por formar parte de ella.
+            </p>
+
+            <button type="button" id="printMemoryButton">
+                Guardar mi tarjeta / Imprimir
+            </button>
+
+            <button type="button" id="editMemoryButton" class="back-button">
+                Editar mi tarjeta
+            </button>
+
+        </div>
+
+        <button type="button" id="memoryBackButton" class="back-button">
+            ← Volver a los premios
+        </button>
+
+    </div>
+
+</section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
